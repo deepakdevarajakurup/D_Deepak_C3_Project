@@ -73,8 +73,12 @@ public class Restaurant {
     }
 
     public int totalCost(String item1, String item2) {
+        int totalPrice = 0;
+        Item firstItem = findItemByName(item1);
+        Item secondItem = findItemByName(item2);
+        totalPrice = firstItem.getPrice() + secondItem.getPrice();
 
-        return 0;
+        return totalPrice;
     }
 
 }
