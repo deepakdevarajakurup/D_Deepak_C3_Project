@@ -50,7 +50,7 @@ public class Restaurant {
         Item newItem = new Item(name,price);
         menu.add(newItem);
     }
-    
+
     public void removeFromMenu(String itemName) throws itemNotFoundException {
 
         Item itemToBeRemoved = findItemByName(itemName);
@@ -70,6 +70,11 @@ public class Restaurant {
 
     public String getName() {
         return name;
+    }
+
+    public int totalCost(String item1, String item2) {
+
+        return 0;
     }
 
 }

@@ -49,7 +49,7 @@ class RestaurantTest {
         Mockito.when(restaurant.getCurrentTime()).thenReturn(wrongTime);
 
         Boolean close = restaurant.isRestaurantOpen();
-        
+
         assertFalse(close);
 
     }
@@ -80,6 +80,11 @@ class RestaurantTest {
 
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
+    }
+    @Test
+    public void totalCost_should_return_cost_when_items_selected_from_menu() {
+        int foodPrice = restaurant.totalCost("Sweet corn soup","Vegetable lasagne");
+        assertThat(foodPrice,equalTo(388));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
